@@ -16,8 +16,9 @@ const emailExiste = async (correo = "") => {
 };
 
 const existeUsuarioPorId = async (id) => {
-  const existeUsuario = await Usuario.findById(id)
-    .catch(() => {throw new Error(`El id no existe: ${id}`);}) 
+  const existeUsuario = await Usuario.findById(id).catch(() => {
+    throw new Error(`El id no existe: ${id}`);
+  });
 
   if (!existeUsuario) {
     throw new Error(`El id no existe: ${id}`);
